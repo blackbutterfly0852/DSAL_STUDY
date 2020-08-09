@@ -169,41 +169,14 @@ public class Heap_Concept_1 {
     }
     public static void main(String[] args) {
         Heap_Concept_1 heap = new Heap_Concept_1(15);
-        for(Integer a : heap.heap_array){
-            System.out.print(a + " ");
+        int[] test_insert = {10,8,5,4,20};
+        for (int i = 0 ; i < test_insert.length; i ++){
+            heap.insert(test_insert[i]);
+            for(Integer a : heap.heap_array){
+                System.out.print(a + " ");
+            }
+            System.out.println(" ");
         }
-        System.out.println(" ");
-
-        heap.insert(10);
-        for(Integer a : heap.heap_array){
-            System.out.print(a + " ");
-        }
-        System.out.println(" ");
-
-        heap.insert(8);
-        for(Integer a : heap.heap_array){
-            System.out.print(a + " ");
-        }
-        System.out.println(" ");
-
-        heap.insert(5);
-        for(Integer a : heap.heap_array){
-            System.out.print(a + " ");
-        }
-        System.out.println(" ");
-        
-        heap.insert(4);
-        for(Integer a : heap.heap_array){
-            System.out.print(a + " ");
-        }
-        System.out.println(" ");
-
-        heap.insert(20);
-        for(Integer a : heap.heap_array){
-            System.out.print(a + " ");
-            
-        }
-        System.out.println(" ");
         System.out.println("-----------------");
 
         for(int i = 0 ; i<heap.heap_array.size(); i++){
