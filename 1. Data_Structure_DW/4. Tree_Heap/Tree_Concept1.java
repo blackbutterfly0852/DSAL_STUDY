@@ -103,10 +103,8 @@ class Tree_Concept1 {
 
         // Delete -> 상대적으로 복잡
         // case 1 : leaf_node 삭제 -> 삭제할 Node의 Parent Node가 삭제할 Node를 가리키지 않도록 한다.
-        // case 2 : child_node가 1개 일 경우 -> 삭제할 Node의 Parent Node가 삭제할 Node의 Child Node를
-        // 가리키도록 한다.
-        // case 3 : child_node가 2개 일 경우 -> 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 삭제할 Node의 Parent
-        // Node가 가리키도록 한다.
+        // case 2 : child_node가 1개 일 경우 -> 삭제할 Node의 Parent Node가 삭제할 Node의 Child Node를 가리키도록 한다.
+        // case 3 : child_node가 2개 일 경우 -> 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 삭제할 Node의 Parent Node가 가리키도록 한다.
         public String delete(int delete_value) {
             // 1. 데이터 탐색
             Boolean searched = false;
@@ -153,8 +151,7 @@ class Tree_Concept1 {
 
             }
 
-            // 3. child_node가 1개 일 경우 -> 삭제할 Node의 Parent Node가 삭제할 Node의 Child Node를 가리키도록
-            // 한다.
+            // 3. child_node가 1개 일 경우 -> 삭제할 Node의 Parent Node가 삭제할 Node의 Child Node를 가리키도록 한다.
 
             // 3-1. child_node가 current_node의 왼쪽에 존재하는 경우
             if (current_node.left != null && current_node.right == null) {
@@ -193,8 +190,7 @@ class Tree_Concept1 {
 
             }
 
-            // 4. child_node가 2개 일 경우 -> 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 삭제할 Node의 Parent Node가
-            // 가리키도록 한다.
+            // 4. child_node가 2개 일 경우 -> 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 삭제할 Node의 Parent Node가 가리키도록 한다.
 
             if (current_node.left != null && current_node.right != null) {
                 // 4-1. current_node가 parent_node 왼쪽에 존재하는 경우
