@@ -13,7 +13,7 @@
 // -> 데이터 삭제는 데이터 추가, 탐색보다 상대적으로 복잡함.
 // -> 이진탐색트리가 균형잡혀 있으면, 탐색시간은 𝑂(𝑙𝑜𝑔𝑛) // but, 한쪽으로 몰려있을 경우, 𝑂(𝑛)
 
-class Tree_Concept1 {
+class Tree_Concept_1 {
 
     class Node {
         int value;
@@ -269,7 +269,7 @@ class Tree_Concept1 {
     }
 
     public static void main(String[] args) {
-        Tree_Concept1 tree_Concept1 = new Tree_Concept1();
+        Tree_Concept_1 tree_Concept1 = new Tree_Concept_1();
         Node head = tree_Concept1.new Node(10);
         NodeMgt nodeMgt = tree_Concept1.new NodeMgt(head);
 
