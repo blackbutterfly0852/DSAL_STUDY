@@ -42,17 +42,17 @@ class Tree_Concept1 {
                     // 1-1. current_node의 왼쪽 노드가 있는 경우
                     if (current_node.left != null) {
                         current_node = current_node.left;
-                        // 1-2. current_node의 왼쪽 노드가 없는 경우
+                    // 1-2. current_node의 왼쪽 노드가 없는 경우
                     } else {
                         current_node.left = new Node(value);
                         break;
                     }
-                    // 2. value 값이 current_node의 value보다 큰 경우 (오른쪽)
+                // 2. value 값이 current_node의 value보다 큰 경우 (오른쪽)
                 } else {
                     // 2-1. current_node의 오른쪽 노드가 있는 경우
                     if (current_node.right != null) {
                         current_node = current_node.right;
-                        // 2-2. current_node의 오른쪽 노드가 없는 경우
+                    // 2-2. current_node의 오른쪽 노드가 없는 경우
                     } else {
                         current_node.right = new Node(value);
                         break;
@@ -76,22 +76,22 @@ class Tree_Concept1 {
                 if (search_value == current_node.value) {
                     System.out.print("depth : " + depth + " ");
                     return found_answer;
-                    // 2. search_value가 current_node.data보다 작은 경우(왼쪽)
+                // 2. search_value가 current_node.data보다 작은 경우(왼쪽)
                 } else if (search_value < current_node.value) {
                     // 2-1. current_node.left에 node가 존재하는 경우
                     if (current_node.left != null) {
                         current_node = current_node.left;
-                        // 2-2. current_node.left에 node가 존재하지 않은 경우
+                    // 2-2. current_node.left에 node가 존재하지 않은 경우
                     } else {
                         System.out.print("depth : " + depth + " ");
                         return not_found_answer;
                     }
-                    // 3. search_value가 current_node.data보다 큰 경우(오른쪽)
+                // 3. search_value가 current_node.data보다 큰 경우(오른쪽)
                 } else if (search_value > current_node.value) {
                     // 3-1. current_node.right의 node가 존재하는 경우
                     if (current_node.right != null) {
                         current_node = current_node.right;
-                        // 3-2. current_node.right의 node가 미존재하는 경우
+                    // 3-2. current_node.right의 node가 미존재하는 경우
                     } else {
                         System.out.print("depth : " + depth + " ");
                         return not_found_answer;
@@ -121,12 +121,12 @@ class Tree_Concept1 {
                 if (delete_value == current_node.value) {
                     searched = true;
                     break;
-                    // 1_2. delete_value가 current_node.data보다 작은 경우(왼쪽)
+                // 1_2. delete_value가 current_node.data보다 작은 경우(왼쪽)
                 } else if (delete_value < current_node.value) {
                     parent_node = current_node;
                     current_node = current_node.left;
 
-                    // 1_3. delete_value가 current_node.data보다 큰 경우(오른쪽)
+                // 1_3. delete_value가 current_node.data보다 큰 경우(오른쪽)
                 } else if (delete_value > current_node.value) {
                     parent_node = current_node;
                     current_node = current_node.right;
@@ -144,7 +144,7 @@ class Tree_Concept1 {
                     System.out.print("left_node 삭제 : parent_node의 왼쪽 : ");
                     return delete_success;
 
-                    // 2-2. current_node.value(삭제할노드)가 parent_node.value보다 큰 경우
+                // 2-2. current_node.value(삭제할노드)가 parent_node.value보다 큰 경우
                 } else {
                     parent_node.right = null;
                     System.out.print("left_node 삭제 : parent_node의 오른쪽 : ");
@@ -165,7 +165,7 @@ class Tree_Concept1 {
                     System.out.print("child_node 왼쪽 1개인 경우 삭제 : current_node는 parent_node의 왼쪽 : ");
                     return delete_success;
 
-                    // 3-1-2. current_node가 parent_node 오른쪽에 존재하는 경우
+                // 3-1-2. current_node가 parent_node 오른쪽에 존재하는 경우
                 } else {
                     parent_node.right = current_node.left;
                     current_node = null;
@@ -173,7 +173,7 @@ class Tree_Concept1 {
                     return delete_success;
 
                 }
-                // 3-2. child_node가 current_node의 오른쪽에 존재하는 경우
+            // 3-2. child_node가 current_node의 오른쪽에 존재하는 경우
             } else if (current_node.left == null && current_node.right != null) {
                 // 3-2-1. current_node가 parent_node 왼쪽에 존재하는 경우
                 if (current_node.value < parent_node.value) {
@@ -182,7 +182,7 @@ class Tree_Concept1 {
                     System.out.print("child_node 오른쪽 1개인 경우 삭제 : current_node는 parent_node의 왼쪽 : ");
                     return delete_success;
 
-                    // 3-2-2. current_node가 parent_node 오른쪽에 존재하는 경우
+                // 3-2-2. current_node가 parent_node 오른쪽에 존재하는 경우
                 } else {
                     parent_node.right = current_node.right;
                     current_node = null;
@@ -215,7 +215,7 @@ class Tree_Concept1 {
                             change_node_parent.left = change_node.right;
                         }
 
-                        // 4-1-3. change_node의 오른쪽 node가 존재하지 않은 경우
+                    // 4-1-3. change_node의 오른쪽 node가 존재하지 않은 경우
                     } else {
                         System.out.print("change_node의 오른쪽 node 미존재 : ");
                         change_node_parent.left = null;
@@ -230,7 +230,7 @@ class Tree_Concept1 {
                     System.out.print("child_node 2개인 경우 삭제 : current_node는 parent_node의 왼쪽 : ");
                     return delete_success;
 
-                    // 4-2. current_node가 parent_node 오른쪽에 존재하는 경우
+                // 4-2. current_node가 parent_node 오른쪽에 존재하는 경우
                 } else {
                     Node change_node_parent = current_node.right;
                     Node change_node = current_node.right;
@@ -248,7 +248,7 @@ class Tree_Concept1 {
                             change_node_parent.left = change_node.right;
                         }
 
-                        // 4-2-3. change_node의 오른쪽 node가 존재하지 않은 경우
+                    // 4-2-3. change_node의 오른쪽 node가 존재하지 않은 경우
                     } else {
                         System.out.print("change_node의 오른쪽 node 미존재 : ");
                         change_node_parent.left = null;
