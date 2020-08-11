@@ -41,20 +41,21 @@ public class Heap_2 {
         }
         Collections.sort(jobList,(j1,j2) -> j1[0] - j2[0]); // 요청시간 기준으로 오름차순
         
-        // 2. 현 작업의 요청시간이 누적작업시간 보다 작거나 같은 경우 insert
+        // 2. idx와 pg.size()를 기준으로 작업시작
         while (idx < jobList.size() || pg.size() != 0) {
+            // 2-1. 현 작업의 요청시간이 누적작업시간 보다 작거나 같은 경우 insert
             while (idx < jobList.size() && jobList.get(idx)[0] <= workTime) {
                 pg.add(new SortClass(jobList.get(idx)[0], jobList.get(idx)[1]));
                 idx += 1;
             }
-            // 2-1. 이전 작업에 종속되는 경우
+            // 2-2. 이전 작업에 종속되는 경우
             if (pg.size() != 0) {
                 SortClass sort = pg.poll();
                 // answer = (누적작업시간 - 현 작업의 요청시간) + 현 작업의 작업시간
                 answer += (workTime - sort.startPoint) + sort.workTime;
                 // 누적작업시간 += 현 작업의 작업시간
                 workTime += sort.workTime;
-            // 2-2. 이전 작업과 별개로 시작하는 하는 경우
+            // 2-3. 이전 작업과 별개로 시작하는 하는 경우
             } else {
                 workTime = jobList.get(idx)[0];
             }

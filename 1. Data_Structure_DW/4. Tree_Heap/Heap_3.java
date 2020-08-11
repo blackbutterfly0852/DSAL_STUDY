@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Heap_3 {
-    //
+    // 200811 ~ ing
     public int[] solution(String[] operations) {
         String i = "I"; // 데이터 입력
         String d = "D 1"; // 최대값 제거
