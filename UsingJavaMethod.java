@@ -16,6 +16,8 @@ public class UsingJavaMethod {
         System.out.print(que); // [b,c] -> que 출력
         // int[]의 index 1 기준으로 오름차순 정렬
         Queue<int[]> pq = new PriorityQueue<>((pq1, pq2) -> pq1[1] - pq2[1]);
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder()); // 최대값(내림차순)
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>(); // 최소값(오름차순)
         
         
         // 2) ArrayList
