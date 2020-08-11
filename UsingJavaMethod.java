@@ -14,6 +14,9 @@ public class UsingJavaMethod {
         System.out.print(que.peek()); // a -> 맨 앞 값 가져오기(element()와 동일)
         System.out.print(que.poll()); // a -> 맨 앞 값 가져오고 삭제
         System.out.print(que); // [b,c] -> que 출력
+        // int[]의 index 1 기준으로 오름차순 정렬
+        Queue<int[]> pq = new PriorityQueue<>((pq1, pq2) -> pq1[1] - pq2[1]);
+        
         
         // 2) ArrayList
         ArrayList<Integer> arrayList = new ArrayList<Integer>(Arrays.asList(1, 2, 3));// 생성시
@@ -23,6 +26,16 @@ public class UsingJavaMethod {
         }
         int [] array = new int[20]; // 크기 20의 0으로 초기화
         System.out.println(Arrays.toString(array));
+
+        int[][] jobs = new int[10][];
+        // int[]의 index 0을 기준으로 오름차순
+        Arrays.sort(jobs, (o1, o2) -> o1[0] - o2[0]);
+        ArrayList<int[]> jobsLiSt = new ArrayList<int[]>();
+        for(int[] job : jobs){
+            jobList.add(job);
+        }
+        //  ArrayList<int[]> int[]의 index 0을 기준으로 오름차순
+        Collections.sort(jobList,(j1,j2) -> j1[0] - j2[0]);
 
         // 3) Map
         Map<Integer, Object> tmp_list_ = new HashMap<Integer, Object>(); // ojbect 내 Map, ArrayList ....
