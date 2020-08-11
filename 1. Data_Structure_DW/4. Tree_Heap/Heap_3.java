@@ -1,33 +1,79 @@
 import java.util.*;
-
+// 이중 우선순위 큐 -> PriortyQueue 미사용
 public class Heap_3 {
-    // 200811 ~ ing
-    public int[] solution(String[] operations) {
+    
+    public static int[] solution(String[] operations) {
+        int[] answer = new int[2];
         String i = "I"; // 데이터 입력
         String d = "D 1"; // 최대값 제거
         String d_1 = "D -1"; // 최소값 제거
-        // 빈 큐에 데이터를 삭제하라는 연산이 주어질 경우, 해당 연산은 무시합니다.
-        // 최댓값/최솟값을 삭제하는 연산에서 최댓값/최솟값이 둘 이상인 경우, 하나만 삭제합니다.
+        
+        ArrayList<Integer> list = new ArrayList<Integer>();
 
-        // 이중 우선순위 큐 -> deque?
-
-       Deque<Integer> deque = new ArrayDeque<>();
-
-        for(String str : operations){
+        for (String str : operations) {
             // insert
-            if (str.startsWith(i)){
-                String number = str.replaceAll("[^0-9]", "");
-                deque.add(Integer.parseInt(number));
-                
+            if (str.startsWith(i)) {
+                String number = str.replaceAll("[^-?0-9]+", "");
+                list.add(Integer.parseInt(number));
+
             // 최대값 제거
-            }else if (str.startsWith(d)){
+            } else if (str.startsWith(d)) {
+                if (list.size() != 0) {
+                    int maxIdx = maxValueIdx(list);
+                    list.remove(maxIdx);
+                }
 
-
+            // 최소값 제거
+            } else if (str.startsWith(d_1)) {
+                if (list.size() != 0) {
+                    int minIdx = minValueIdx(list);
+                    list.remove(minIdx);
+                }
             }
         }
-        int[] answer = {};
-        
+        if (list.size() != 0) {
+            answer[0] = (Collections.max(list));
+            answer[1] = (Collections.min(list));
+
+        } else {
+            answer[0] = 0;
+            answer[1] = 0;
+        }
+        System.out.println("answer[0] : " + answer[0]);
+        System.out.println("answer[1] : " + answer[1]);
         return answer;
     }
-    
+    // 최대값 idx 구하기
+    public static int maxValueIdx(ArrayList<Integer> list) {
+        int max = Integer.MIN_VALUE;
+        int idx = 0;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) > max) {
+                max = list.get(i);
+                idx = i;
+            }
+        }
+        return idx;
+    }
+    // 최소값 idx 구하기
+    public static int minValueIdx(ArrayList<Integer> list) {
+        int min = Integer.MAX_VALUE;
+        int idx = 0;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) < min) {
+                min = list.get(i);
+                idx = i;
+            }
+        }
+        
+        return idx;
+    }
+
+    public static void main(String[] args) {
+        String[] input_0 = { "I 16", "D 1" };
+        String[] input_1 = { "I 7", "I 5", "I -5", "D -1" };
+        String[] input_2 = {"I -45", "I 653", "D 1", "I -642", "I 45", "I 97", "D 1", "D -1", "I 333"};
+        System.out.println(solution(input_2));
+        
+    }
 }
