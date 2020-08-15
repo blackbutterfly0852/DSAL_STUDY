@@ -48,6 +48,12 @@ public class UsingJavaMethod {
         Collections.sort(tmp_keySetList, (o1, o2) -> (tmp_list.get(o1).compareTo(tmp_list.get(o2))));
         // tmp_list의 value 값 기준으로 내림차순한 key값 정렬.
         Collections.sort(tmp_keySetList, (o1, o2) -> (tmp_list.get(o2).compareTo(tmp_list.get(o1))));
+
+        // 4) int[]
+        int[] array_sort = {4,3,1,2};
+        int[] tmp = Arrays.copyOfRange(array_sort, 1, 3); // {3,1}
+        System.out.println(Arrays.toString(tmp));
+        Arrays.sort(tmp); //{1,3}
         
         // *) 복합자료구조
         LinkedList<String>[]  hash_table_1 = new LinkedList[10]; // {{linkedList}, {linkedList}, {linkedList}, {linkedList}......}
@@ -83,7 +89,22 @@ public class UsingJavaMethod {
         
         System.out.println("3^^10 : " + Math.pow(3,10));
 
-        // 
+        // Java 특정 정렬 활용 : 5.Sort - Sort_2.java 참고
+        // https://gmlwjd9405.github.io/2018/09/06/java-comparable-and-comparator.html
+        // Arrays.sort()와 Collections.sort()
+        // -> Arrays.sort() : 일반적인 배열 
+        // -> Collections.sort() : List Collection의 경우(내부적으로 Arrays.sort())
+
+        // Comparable interface vs Comparator interface를 이용한 Java 객체를 정렬
+        // -> Comparable : 정렬 수행 시 기본적으로 적용되는 정렬 기준이 되는 메서드를 정의하는 인터페이스 -> compareTo()
+        // -> Comparator : 정렬 가능한 클래스(Comparable 인터페이스를 구현한 클래스)들의 
+        //                 기본 정렬 기준과 다르게 정렬 하고 싶을 때 사용하는 인터페이스 -> compare()
+
+        // compareTo() 문자열 비교
+        // https://mine-it-record.tistory.com/133
+
+       
+
           
         
        
