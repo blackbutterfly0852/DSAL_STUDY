@@ -104,7 +104,9 @@ public class UsingJavaMethod {
         // https://mine-it-record.tistory.com/133
 
        
-
+        // Java 이진탐색 -> 6.Search - BinarySearch_Concept.java 참고
+        int[] list = {1,2,3,4};
+        Arrays.binarySearch(list, 3); // key값 존재시 idx 리턴, 없으면 -(삽입포인트+1) -> 음수값 리턴
           
         
        
