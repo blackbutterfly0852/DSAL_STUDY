@@ -77,7 +77,7 @@ public class UsingJavaMethod {
         if (line2 == null){} // True
 
         // 3) 순열/조합 
-        // 순열 : 순열(Permutation)은 서로 다른 n 개의 대상에서 r 개를 뽑아 일렬로 배열한 것 : nPr
+        // 순열 : 순열(Permutation)은 서로 다른 n 개의 대상에서 r 개를 뽑아 일렬로 배열한 것 : nPr -> 6. Search - Permutation_Concept.java 및 Search_2 참조
         // 조합 : 조합(Combination)은 같은 n 개 중에 r 를 뽑되, 순서를 고려하지 않는다. : nCr
         
         // ex) list의 길이가 n 중에서 2개를 추출한다
@@ -100,13 +100,16 @@ public class UsingJavaMethod {
         // -> Comparator : 정렬 가능한 클래스(Comparable 인터페이스를 구현한 클래스)들의 
         //                 기본 정렬 기준과 다르게 정렬 하고 싶을 때 사용하는 인터페이스 -> compare()
 
-        // compareTo() 문자열 비교
-        // https://mine-it-record.tistory.com/133
+        // compareTo() 문자열 비교 : https://mine-it-record.tistory.com/133
 
        
         // Java 이진탐색 -> 6.Search - BinarySearch_Concept.java 참고
         int[] list = {1,2,3,4};
         Arrays.binarySearch(list, 3); // key값 존재시 idx 리턴, 없으면 -(삽입포인트+1) -> 음수값 리턴
+
+        // Integer.parseInt() vs Integer.valueOf() 차이 -> https://m.blog.naver.com/sthwin/221000179980
+        // parseInt() -> return 원시자료형인 int형
+        // valueOf()  -> return wrapper 자료형인 Integer 클래스
           
         
        

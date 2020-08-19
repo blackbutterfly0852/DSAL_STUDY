@@ -8,16 +8,13 @@ public class SequentialSearch_Concept {
 
     public static boolean sequentialSearch(int[] list, int serach_data) {
         Boolean answer = false;
-
         for (int num : list) {
             if (num == serach_data) {
                 answer = true;
                 break;
             }
         }
-
         return answer;
-
     }
 
     public static void main(String[] args) {
