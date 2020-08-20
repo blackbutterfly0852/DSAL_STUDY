@@ -1,7 +1,7 @@
 import java.util.*;
 
 // 완전탐색 - 소수찾기
-public class Search_2 {
+public class BruteForceSearch_2 {
     static Set<Integer> isExist = new HashSet<Integer>();
 
     public static int solution(String numbers) {

@@ -22,20 +22,21 @@ public class BinarySearch_Concept {
         boolean answer = false;
         int left_idx = 0;
         int right_idx = list.length - 1;
-        // 중요!! 오름차순 기준으로 right_idx가 어느 위치든, 
+        // 중요!! 오름차순 기준으로 right_idx가 어느 위치든,
         // 찾고자하는 데이터는 해당 시점의 right_idx의 안쪽 범위에 존재하거나 없다.
-        while (left_idx <= right_idx) { 
-            int center_idx = (left_idx + right_idx) / 2; 
+        while (left_idx <= right_idx) {
+            int center_idx = (left_idx + right_idx) / 2;
             if (search_data == list[center_idx]) {
                 return true;
             } else if (search_data < list[center_idx]) {
-                right_idx = center_idx - 1; 
+                right_idx = center_idx - 1;
             } else if (search_data > list[center_idx]) {
                 left_idx = center_idx + 1;
             }
         }
         return answer;
     }
+
     // from python -> 확실히 python -> java는 비효율적이다
     public static boolean binarySearch_2(int[] list, int left, int right, int search_data) {
         System.out.println("시작");
@@ -47,11 +48,11 @@ public class BinarySearch_Concept {
         // 1. list의 기준값이 search_data 인 경우.
         if (search_data == list[center_idx]) {
             return true;
-        // 2. 기준 인덱스와의 차이가 1이며, search_data 인 경우.
+            // 2. 기준 인덱스와의 차이가 1이며, search_data 인 경우.
         } else if ((rc == 1 || lc == 1)
                 && ((list[center_idx + 1] == search_data) || (list[center_idx - 1] == search_data))) {
             return true;
-        // 3. 기준 인덱스와의 차이가 1이며, search_data가 아닌 경우.
+            // 3. 기준 인덱스와의 차이가 1이며, search_data가 아닌 경우.
         } else if ((rc == 1 || lc == 1)
                 && ((list[center_idx + 1] != search_data) || (list[center_idx - 1] != search_data))) {
             return false;
@@ -60,8 +61,8 @@ public class BinarySearch_Concept {
         if (search_data < list[center_idx]) {
             return binarySearch_2(list, left, center_idx, search_data);
 
-        // 5. 찾는 값(search_data)가 list의 중앙값(list[center_idx]) 보다 큰 경우
-        } else if (search_data > list[center_idx]) { 
+            // 5. 찾는 값(search_data)가 list의 중앙값(list[center_idx]) 보다 큰 경우
+        } else if (search_data > list[center_idx]) {
             return binarySearch_2(list, center_idx, right, search_data);
 
         }

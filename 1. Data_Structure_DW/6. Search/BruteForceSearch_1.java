@@ -1,6 +1,6 @@
 // 완전탐색 - 모의고사
 import java.util.*;
-public class Search_1 {
+public class BruteForceSearch_1 {
 
     public static int[] solution(int[] answers) {
         int[] answer;

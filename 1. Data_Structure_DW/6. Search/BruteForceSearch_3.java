@@ -2,7 +2,7 @@
 // 완전탐색 - 카펫
 import java.util.*;
 
-public class Search_3 {
+public class BruteForceSearch_3 {
 
     public static int[] solution(int brown, int yellow) {
         int[] answer = new int[2];
