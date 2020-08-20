@@ -8,8 +8,8 @@ public class BinarySearch_1 {
         // 1. 탐색 범위 산정
         long left_idx = 1;
         long right_idx = times[times.length - 1] * (long) n;
-
-        // 2. 탐색 범위 산정 후 이분 탐색 count와 n 비교 후 left_idx / right_idx 설정
+        
+        // 2. 탐색 범위 산정 후 이분 탐색 count와 n 비교 후 left_idx / right_idx 설정 
         while (left_idx <= right_idx) {
             long center = (left_idx + right_idx) / 2;
             long count = 0;
