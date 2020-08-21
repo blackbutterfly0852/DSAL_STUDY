@@ -38,20 +38,20 @@ public class Sort_2 {
         //     @Override
         //     // 중요!! 기준은 앞 // 1 : 자리변경, // -1, 0 : 자리미변경 
         //     public int compare(String a, String b) { 
-        //         // 1-1. 해당 요소보다 다음 요소가 큰 경우 -> 변경
+        //         // 1-1. 해당 요소보다 다음 요소가 큰 경우 -> 변경      ex) 3 vs 4
         //         if(a.charAt(0) < b.charAt(0)){
         //             return 1;
-        //         // 1-2. 해당 요소가 다음 요소보다 큰 경우 -> 미변경
+        //         // 1-2. 해당 요소가 다음 요소보다 큰 경우 -> 미변경    ex) 3 vs 2
         //         }else if(a.charAt(0) > b.charAt(0)){
         //             return -1;
-        //         // 1-3. 해당 요소와 다음 요소가 같은 경우
+        //         // 1-3. 해당 요소와 다음 요소가 같은 경우              ex) 3 vs 3
         //         }else if(a.charAt(0) == b.charAt(0)){
-        //             // 1-3-1. 해당 요소와 다음 요소의 길이가 같은 경우 ex) 30 vs 34
+        //             // 1-3-1. 해당 요소와 다음 요소의 길이가 같은 경우 ex) 30 vs 34   333 334
         //             if(a.length() == b.length()){
-        //                 // 1-3-2. 해당 요소보다 다음 요소가 큰 경우 -> 변경
+        //                 // 1-3-1-1. 해당 요소보다 다음 요소가 큰 경우 -> 변경
         //                 if(Integer.parseInt(a) < Integer.parseInt(b)){ 
         //                     return 1;
-        //                 // 1-3-2. 해당 요소가 다음 요소보다 큰 경우 -> 미변경    
+        //                 // 1-3-1-1. 해당 요소가 다음 요소보다 큰 경우 -> 미변경    
         //                 }else{
         //                     return -1;
         //                 }
@@ -74,7 +74,7 @@ public class Sort_2 {
         //     }
         // };
 
-        //Arrays.sort(stringSorted, myComparator);
+        // Arrays.sort(stringSorted, myComparator);
        
         int count = 0;
         for(int i = 0 ; i< numbers.length ; i++){

@@ -6,7 +6,7 @@ public class Heap_1 {
     public static int solution(int[] scoville, int K) {
         // 1. 초기화
         int answer = 0;
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<Integer>(); // 기본적으로 오름차순
         for (int i : scoville) {
             priorityQueue.add(i);
         }

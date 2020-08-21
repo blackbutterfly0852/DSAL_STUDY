@@ -14,7 +14,7 @@ public class Sort_3 {
             int use_count = 0; // 인용 논문 수
             // 1-1. i(인용횟수)에 따라 인용 논문 수 계산
             for (int j = 0; j < citations.length; j++) {
-                if (i <= citations[j]) {
+                if (i <= citations[j]) { // ex) 0 vs 0 -> 0 vs 1 -> 0 vs 3 ...
                     use_count += 1;
                 }
             }

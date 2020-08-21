@@ -4,8 +4,8 @@ import java.util.*;
 public class Heap_3_1 {
     public static int[] solution(String[] arguments) {
         int[] answer = { 0, 0 };
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder()); // 최대값
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>(); // 최소값
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder()); // 최대값 // 내림차순 54321
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>(); // 최소값 // 12345
 
         for (String str : arguments) {
             String input[] = str.split(" ");

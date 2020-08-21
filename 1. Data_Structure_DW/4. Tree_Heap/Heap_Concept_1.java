@@ -19,13 +19,13 @@ import java.util.*;
 // -> 오른쪽 자식 노드 인덱스 번호 (right child node's index) = 부모 노드 인덱스 번호 (parent node's index) * 2 + 1
 public class Heap_Concept_1 {
     ArrayList<Integer> heap_array;
-    
+    // 최대힙(MAX_HEAP) 구현
     // 1. 초기화
     // index 1부터 시작하기 위해 index 0은 null로 초기화
     public Heap_Concept_1(int init_data){
         heap_array = new ArrayList<Integer>();
         heap_array.add(null);
-        heap_array.add(init_data);
+        heap_array.add(init_data); // IDX 1 부터 시작
     }
 
     // 2. insert

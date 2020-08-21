@@ -6,14 +6,15 @@ public class Sort_1 {
     static int[] buff;
 
     public static int[] solution(int[] array, int[][] commands) {
-        // 1. 초기화
+        // 1. 초기화 // array : [1, 5, 2, 6, 3, 7, 4] // commands : [[2, 5, 3], [4, 4, 1], [1, 7, 3]]
         int[] answer = new int[commands.length];
         // 2. commands 크기만큼 LOOP
         for (int i = 0; i < commands.length; i++) {
             // 2-1. 정해진 크기만큼 복사
-            int[] tmp = Arrays.copyOfRange(array, commands[i][0] - 1, commands[i][1]);
+            int[] tmp = Arrays.copyOfRange(array, commands[i][0] - 1, commands[i][1]); // {5, 2, 6, 3}
             // 2-2. 정렬
             // Arrays.sort(tmp);
+            // 직접구현
             buff = new int[tmp.length];
             mergeSort(tmp, 0, tmp.length - 1);
             // 2-3. 특정 위치 대입

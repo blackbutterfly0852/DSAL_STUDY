@@ -133,6 +133,8 @@ class Tree_Concept_1 {
             if (!searched) {
                 return not_found_answer;
             }
+
+            
             // 2. leaf_node 삭제 -> 삭제할 Node의 Parent Node가 삭제할 Node를 가리키지 않도록 한다.
             if (current_node.left == null && current_node.right == null) {
 
