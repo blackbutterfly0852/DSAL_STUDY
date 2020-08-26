@@ -1,26 +1,26 @@
+// DFS/BFS_4 여행경로
 import java.util.*;
-
 public class DfsBfs_4 {
-
-    // 여러개일 경우 순서 정한다.
 
     public static String[] solution(String[][] tickets) {
         String[] answer = new String[tickets.length + 1];
         boolean[] visited = new boolean[tickets.length];
-        answer = dfs(0, visited, "ICN", tickets, answer);
-        // System.out.println("final answer : " + Arrays.toString(answer));
-        return answer;
-    }
-
-    public static String[] dfs(int length, boolean[] visited, String start, String[][] tickets, String[] answer) {
+        // 중요!! 처음부터 두 번째 인자를 기준으로 오름차순 정렬을 해놓은다.
         Arrays.sort(tickets, new Comparator<String[]>() {
             public int compare(String[] a, String[] b) {
-                return a[1].compareTo(b[1]);
+                return a[1].compareTo(b[1]); // 두 번째 인자를 기준으로 오름차순 정렬
             }
         });
         // System.out.print("length : " + length + " ");
         // System.out.println(Arrays.toString(answer) + " " + start);
         // System.out.println("");
+        answer = dfs(0, visited, "ICN", tickets, answer);
+        System.out.println("final answer : " + Arrays.toString(answer));
+        return answer;
+    }
+
+    public static String[] dfs(int length, boolean[] visited, String start, String[][] tickets, String[] answer) {
+             
         if(length == answer.length-1){
             answer[length] = start;
             return answer;
@@ -33,8 +33,6 @@ public class DfsBfs_4 {
         //     }
         // }
         // System.out.println("");
-
-            
         for (int i = 0; i < tickets.length; i++) {
             for (int j = 0; j < tickets[i].length; j++) {
                 if (tickets[i][0].equals(start) && !visited[i]) {
