@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-
+// 기능 개발
 class StackQueue_3 {
     public static int[] solution(int[] progresses, int[] speeds) {
         List<int[]> tmp_answer = new ArrayList<>();
@@ -36,7 +36,7 @@ class StackQueue_3 {
 
         answer = new int[tmp_answer.size()];
         for (int i = 0; i < tmp_answer.size(); i++) {
-            answer[i] = tmp_answer.get(i)[1];
+            answer[i] = tmp_answer.get(i)[1];   
         }
         // System.out.println(Arrays.toString(answer));
         return answer;
