@@ -14,13 +14,14 @@ public class BruteForceSearch_2 {
             boolean[] visited = new boolean[length];
             isPermutation(numbers, output, visited, 0, length, i);
         }
+        // 2. 소수 이면 answer +1;
         for (int num : isExist) {
             // System.out.println("num : " + num);
             if (isOne(num) && num > 1) {
                 answer += 1;
             }
         }
-        // 2. 소수 이면 answer +1;
+       
         return answer;
     }
 

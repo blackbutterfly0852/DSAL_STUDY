@@ -10,11 +10,11 @@ class Solution {
         List<Integer> truck_list = new ArrayList<> ();
        
         for (int i = 0; i < bridge_length; i++) {
-            bridge_list.add(i, 0);
+            bridge_list.add(0);
         }
 
         for (int j = 0; j < truck_weights.length; j++) {
-            truck_list.add(j, truck_weights[j]);
+            truck_list.add(truck_weights[j]);
         }
         int tmp_sum = 0;
 
@@ -30,7 +30,7 @@ class Solution {
                     int tmp_add = truck_list.remove(0);
                     bridge_list.add(tmp_add);
                 } else {
-                    bridge_list.add(0);
+                    bridge_list.add(0); // 두 개를 만들어준다.
 
                 }
 

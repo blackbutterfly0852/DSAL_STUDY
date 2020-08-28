@@ -24,7 +24,7 @@ public class BruteForceSearch_3 {
     public static int[] solution_2(int brown, int red) {
         int a = (brown+4)/2;
         int b = red+2*a-4;
-        int[] answer = {(int)(a+Math.sqrt(a*a-4*b))/2,(int)(a-Math.sqrt(a*a-4*b))/2};
+        int[] answer = {(int)(a+Math.sqrt(a*a-4*b))/2,(int)(a-Math.sqrt(a*a-4*b))/2}; // 제곱근
         return answer;
     }
     

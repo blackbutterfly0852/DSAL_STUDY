@@ -20,7 +20,7 @@ public class Sort_2 {
         Arrays.sort(stringSorted, new Comparator<String>(){
             // a : 10(idx = 1), b : 6(idx = 0)
             // 중요 return 값이 양수인 경우만 자리 변경(Comparable.CompareTo() // Comparator.Compare() 모두 적용)
-            public int compare(String a , String b){ 
+            public int compare(String a , String b){ // b가 a보다 큰 경우 return 1 -> 변경하라
                 System.out.println("-----" + Arrays.toString(stringSorted));
                 System.out.println("a : " + a + " b : " + b);
                 System.out.println("b+a : " + (b+a));

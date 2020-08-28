@@ -11,7 +11,7 @@ public class Sort_1 {
         // 2. commands 크기만큼 LOOP
         for (int i = 0; i < commands.length; i++) {
             // 2-1. 정해진 크기만큼 복사
-            int[] tmp = Arrays.copyOfRange(array, commands[i][0] - 1, commands[i][1]); // {5, 2, 6, 3}
+            int[] tmp = Arrays.copyOfRange(array, commands[i][0] - 1, commands[i][1]); // {5, 2, 6, 3} // Arrays.copyOfRange(array, 시작 idx, 마지막 idx + 1);
             // 2-2. 정렬
             // Arrays.sort(tmp);
             // 직접구현

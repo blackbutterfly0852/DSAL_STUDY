@@ -2,19 +2,20 @@ import java.util.*;
 
 // DFS/BFS_1 타켓 넘버 1 -> https://www.pymoon.com/entry/Programmers-%ED%83%80%EA%B2%9F-%EB%84%98%EB%B2%84-BFSDFS-Java-%ED%92%80%EC%9D%B4?category=929770 참조
 public class DfsBfs_1 {
-
+    // 있으면 1, 없으면 0 을 계속 더해줘야함 -> 아래에 answer = 0 answer += dfs() return answer;
     public static int dfs(int sum, int idx, int[] numbers, int target) {
         if (idx >= numbers.length) {
             if (sum == target) {
                 return 1;
             }
             return 0;
+
         }
 
         int answer = 0;
         int plus = numbers[idx];
         int minus = -numbers[idx];
-        answer += dfs(sum + plus, idx + 1, numbers, target);
+        answer += dfs(sum + plus,  idx + 1, numbers, target);
         answer += dfs(sum + minus, idx + 1, numbers, target);
         return answer;
     }

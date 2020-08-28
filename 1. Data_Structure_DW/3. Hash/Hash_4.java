@@ -8,7 +8,7 @@ public class Hash_4 {
         int[] answer = {};
         ArrayList<Integer> tmp_answer = new ArrayList<Integer>();
 
-        // 1. Genre 기준으로 저장 ex) {{c : 1450}, {p : 3100} , {B : 1100}}
+        // 1. Genre 기준으로 저장 ex) {{C : 1450}, {P : 3100} , {B : 1100}}
         Map<String, Integer> g_list = new HashMap<String, Integer>();
         for (int i = 0; i < genres.length; i++) {
             if (!g_list.containsKey(genres[i])) {

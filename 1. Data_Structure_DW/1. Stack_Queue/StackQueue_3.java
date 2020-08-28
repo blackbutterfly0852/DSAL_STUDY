@@ -6,7 +6,7 @@ import java.util.List;
 // 기능 개발
 class StackQueue_3 {
     public static int[] solution(int[] progresses, int[] speeds) {
-        List<int[]> tmp_answer = new ArrayList<>();
+        List<int[]> tmp_answer = new ArrayList<int[]>();
         int[] answer = {};
         for (int i = 0; i < progresses.length; i++) {
 

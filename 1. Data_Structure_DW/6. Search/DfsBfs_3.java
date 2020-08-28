@@ -2,8 +2,8 @@
 public class DfsBfs_3 {
     static int cnt = 0;
     public  static int dfs(String begin, String target, String[] words, int sum,  boolean[] visited) {
-        cnt++;
-        int tmp_answer = words.length + 1; // 7
+        //cnt++;
+        int tmp_answer = words.length + 1; // 7 // --> min 값 찾기? 최대값을 먼저 지정해놓는다.
         // System.out.println(begin + " " + target + " " + sum );
         if (begin.equals(target)) {
             return sum;
@@ -17,7 +17,6 @@ public class DfsBfs_3 {
                 tmp_answer = Math.min(tmp_answer, tmp_2);
                 System.out.println("tmp_answer : " + tmp_answer );
                 visited[i] = false;
-
             }
         }
         return tmp_answer ;
