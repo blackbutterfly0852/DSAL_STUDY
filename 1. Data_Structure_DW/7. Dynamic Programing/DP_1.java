@@ -75,8 +75,6 @@ public class DP_1 {
         int N = 4;
         int number = 17;
         System.out.println(solution(N, number));
-
       
-
     }
 }
