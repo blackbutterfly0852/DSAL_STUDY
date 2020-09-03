@@ -22,7 +22,7 @@ public class DP_2 {
         return answer;
     }
 
-    // 2. DP 활용
+    // 2. 하향식 DP 활용
     public static int solution(int[][] triangle) {
         int answer = 0;
 
@@ -50,14 +50,28 @@ public class DP_2 {
         }
 
         // for (int[] a : compare) {
-        //     for (int b : a) {
-        //         System.out.print(b + " ");
-        //     }
-        //     System.out.println("");
+        // for (int b : a) {
+        // System.out.print(b + " ");
+        // }
+        // System.out.println("");
         // }
 
         return answer;
 
+    }
+
+    // 3. 다른 사람 풀이(부분 상향식, DP)
+    public int solution_3(int[][] triangle) {
+        for (int i = 1; i < triangle.length; i++) {
+            // 1) 양 끝, 즉 겹치지 않은 곳을 먼저 채워 넣어준다. idx 1을 기준으로 idx 0번째를 불러온다.
+            triangle[i][0] += triangle[i - 1][0];     // [2,0] -> 3개 첫번째
+            triangle[i][i] += triangle[i - 1][i - 1]; // [2,2] -> 3개 마지막
+            // 2) 겹치는 부분 계산, 부분 상향식:  [2,1]은 [1,0] [1,1] 중 큰 수를 더해주면 된다.
+            for (int j = 1; j < i; j++) 
+                triangle[i][j] += Math.max(triangle[i - 1][j - 1], triangle[i - 1][j]); 
+        }
+
+        return Arrays.stream(triangle[triangle.length - 1]).max().getAsInt();
     }
 
     public static void main(String[] args) {
