@@ -1,41 +1,40 @@
-class Solution {
-    public static String[] solution(String[][] tickets) {
-        String[] answer = new String[tickets.length + 1];
-        boolean[] visited = new boolean[tickets.length];
-        Arrays.sort(tickets, new Comparator<String[]>() {
-            public int compare(String[] a, String[] b) {
-                return a[1].compareTo(b[1]);
-            }
-        });
-        answer = dfs(0, visited, "ICN", tickets, answer);
+import java.time.YearMonth;
+import java.util.*;
 
-        return answer;
-    }
-
-    public static String[] dfs(int length, boolean[] visited, String start, String[][] tickets, String[] answer) {
-        //
-        if (length == answer.length - 1) {
-            answer[length] = start;
-            return answer;
-        }
-
+public class Solution {
+    public static String[] solution(int[][] tickets) {
+        int[] answer = new int[2];
+        HashMap<Integer, Integer> X = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> Y = new HashMap<Integer, Integer>();
         for (int i = 0; i < tickets.length; i++) {
+            if (!X.containsKey(tickets[i][0])) {
+                X.put(tickets[i][0], 1);
+            } else {
+                X.remove(tickets[i][0]);
+            }
 
-            if (tickets[i][0].equals(start) && !visited[i]) {
-                visited[i] = true;
-                answer[length] = tickets[i][0];
-                length++;
-                answer = dfs(length, visited, tickets[i][1], tickets, answer);
+            if (!Y.containsKey(tickets[i][1])) {
+                Y.put(tickets[i][1], 1);
 
-                if (answer[length] == null) {
-                    visited[i] = false;
-                    length--;
-                    answer[length] = null;
-                }
+            } else {
+                Y.remove(tickets[i][1]);
             }
 
         }
 
+        for (int x : X.keySet()) {
+            answer[0] = x;
+        }
+        for (int y : Y.keySet()) {
+            answer[1] = y;
+        }
+        System.out.println(answer.toString());
+
         return answer;
     }
+
+    public static void main(String[] args) {
+       
+    }
+
 }
