@@ -1,4 +1,4 @@
-import java.util.*;
+
 // 등굣길
 public class DP_3_1 {
     // 정확성은 맞으나, 효율성 테스트에서 실패
