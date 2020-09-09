@@ -28,6 +28,8 @@ public class DP_4 {
         // int[] money = {1,2,3,1};
         int[] money = { 5, 4, 1, 8, 9 };
         System.out.println(solution(money));
+        System.out.println("6");
+        System.out.println('6' + '6');
     }
 
 }

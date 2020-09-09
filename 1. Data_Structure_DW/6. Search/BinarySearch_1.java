@@ -1,4 +1,5 @@
 // 이진탐색 : 입국심사 -> 풀지 못하고 https://minnnne.tistory.com/32 참고함
+// 무엇을 이분탐색으로 찾는가? '심사관들이 사용할 수 있는 총 시간'
 import java.util.*;
 
 public class BinarySearch_1 {
