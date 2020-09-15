@@ -1,8 +1,8 @@
 import java.time.YearMonth;
 import java.util.*;
 
-public class Solution {
-    public static String[] solution(int[][] tickets) {
+public class Practice {
+    public static int[] solution(int[][] tickets) {
         int[] answer = new int[2];
         HashMap<Integer, Integer> X = new HashMap<Integer, Integer>();
         HashMap<Integer, Integer> Y = new HashMap<Integer, Integer>();
