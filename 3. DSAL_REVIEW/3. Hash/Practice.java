@@ -46,6 +46,8 @@ public class Practice {
             }
             
         }
+
+      
     }
 
     // https://gmlwjd9405.github.io/2018/09/06/java-comparable-and-comparator.html
@@ -117,7 +119,7 @@ public class Practice {
             System.out.println("Comparator_오름 : " + p.x);
         }
 
-        // 내림차순
+        //내림차순
         Comparator<PointComparable> cp = new Comparator<Practice.PointComparable>(){
             @Override
             public int compare(Practice.PointComparable current, Practice.PointComparable last) {

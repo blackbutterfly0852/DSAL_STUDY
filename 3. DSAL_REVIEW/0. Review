@@ -1,0 +1,8 @@
+201012 Hash
+1) 베스트 앨범 : Hash_4.java, PriorityQueue
+201014 Sort
+1) 가장 큰 수 : Sort_2.java, Comparator
+2) H-index : 
+* Sort_3.java
+* 어떤 과학자가 발표한 논문 n편 중, h번 이상 인용된 논문이 h편 이상이고 나머지 논문이 h번 이하 인용되었다면 h의 최댓값이 이 과학자의 H-Index입니다.
+* (중요) 어떤 수 a는 감소하고 어떤 수 b는 증가하는 관계에서 (a, b) 쌍의 최소값의 최대값은 a와 b의 차이값이 가장 작을 경우이다. 
