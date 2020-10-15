@@ -1,5 +1,3 @@
-
-// 완전탐색 - 카펫
 import java.util.*;
 
 public class BruteForceSearch_3 {
@@ -21,24 +19,25 @@ public class BruteForceSearch_3 {
     }
 
     // 다른 사람 풀이_1(미친놈)
-    public static int[] solution_2(int brown, int red) {
+    public static int[] solution_2(int brown, int yellow) {
         int a = (brown+4)/2;
-        int b = red+2*a-4;
+        int b = yellow+2*a-4;
+        System.out.println(b);
         int[] answer = {(int)(a+Math.sqrt(a*a-4*b))/2,(int)(a-Math.sqrt(a*a-4*b))/2}; // 제곱근
         return answer;
     }
     
     public static void main(String[] args) {
-        solution(8, 1);
-        solution(10, 2);
-        solution(12, 3);
-        solution(12, 4);
-        solution(24, 24);
-        solution(14, 4);
-        solution(20, 16);
-        solution(50, 22);
-        solution(8, 1);
-        solution(18, 6);
+        solution_2(8, 1);
+        solution_2(10, 2);
+        //solution(12, 3);
+        solution_2(12, 4);
+        //solution(24, 24);
+        //solution(14, 4);
+        //solution(20, 16);
+        //solution(50, 22);
+        //solution(8, 1);
+        //solution(18, 6);
 
     }
 
