@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Sort_3 {
+public class R_Sort_3 {
 
     public static int solution(int[] citations) {
         Arrays.sort(citations);

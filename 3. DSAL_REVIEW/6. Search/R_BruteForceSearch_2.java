@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class BruteForceSearch_2 {
+public class R_BruteForceSearch_2 {
 
     // 순열 저장소 - 중복제거
     static HashSet<Integer> permutation_list = new HashSet<Integer>();

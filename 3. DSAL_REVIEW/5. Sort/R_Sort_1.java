@@ -1,5 +1,5 @@
 import java.util.*;
-public class Sort_1 {
+public class R_Sort_1 {
 
     public static int[] solution(int[] array, int[][] commands) {
         // 1. 초기화

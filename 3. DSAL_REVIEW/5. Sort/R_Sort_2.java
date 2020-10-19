@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 
-public class Sort_2 {
+public class R_Sort_2 {
 
     public static String solution(int[] numbers) {
         String answer = "";

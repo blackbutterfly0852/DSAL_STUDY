@@ -1,5 +1,5 @@
 import java.util.*;
-public class Hash_1 {
+public class R_Hash_1 {
     public static String solution(String[] participant, String[] completion) {
         String answer = "";
 

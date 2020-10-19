@@ -61,10 +61,8 @@ public class DfsBfs_4 {
         // String[][] tickets = { { "ICN", "A" }, { "A", "C" }, { "A", "D" }, { "D",
         // "B"}, { "B", "A" } };
         // String[][] tickets = { { "ICN", "SFO" }, { "ICN", "SFO" },{ "SFO", "ICN" } };
-        // String[][] tickets = { { "ICN", "A" }, { "A", "B" }, { "B", "A" }, { "A",
-        // "ICN"}, { "ICN", "A" } };
-        String[][] tickets = { { "ICN", "BOO" }, { "ICN", "COO" }, { "COO", "DOO" }, { "DOO", "COO" }, { "BOO", "DOO" },
-                { "DOO", "BOO" }, { "BOO", "ICN" }, { "COO", "BOO" } };
+        String[][] tickets = { { "ICN", "A" }, { "A", "B" }, { "B", "A" }, { "A", "ICN"}, { "ICN", "A" } };
+        // String[][] tickets = { { "ICN", "BOO" }, { "ICN", "COO" }, { "COO", "DOO" }, { "DOO", "COO" }, { "BOO", "DOO" },{ "DOO", "BOO" }, { "BOO", "ICN" }, { "COO", "BOO" } };
         // ['ICN', 'BOO', 'DOO', 'BOO', 'ICN', 'COO', 'DOO', 'COO', 'BOO']
         solution(tickets);
     }

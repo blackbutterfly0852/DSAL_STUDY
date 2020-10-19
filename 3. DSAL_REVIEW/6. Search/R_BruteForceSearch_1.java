@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class BruteForceSearch_1 {
+public class R_BruteForceSearch_1 {
 
 
     public static int[] solution(int[] answers) {

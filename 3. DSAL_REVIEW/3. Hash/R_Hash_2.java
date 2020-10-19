@@ -1,5 +1,5 @@
 import java.util.*;
-public class Hash_2 {
+public class R_Hash_2 {
 
 
     public static boolean solution(String[] phone_book) {

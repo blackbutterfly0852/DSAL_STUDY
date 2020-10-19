@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Hash_4 {
+public class R_Hash_4 {
 
     // 참고
     // 객체 지향 고려

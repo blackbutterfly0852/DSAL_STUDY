@@ -1,7 +1,7 @@
 import java.util.HashMap;
 
 import java.util.*;
-public class Hash_3 {
+public class R_Hash_3 {
 
     public static int solution(String[][] clothes) {
         int answer = 1;
