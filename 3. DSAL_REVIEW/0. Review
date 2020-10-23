@@ -22,3 +22,7 @@
 
 201022 StackQueue
 1) 1, 2번 Stack, Queue 흐름 재복습 필요.
+
+201023 Heap
+1) 2번 : 시간소요多 -> 재복습필요
+2) 3번 : maxHeap과 minHeap의 동기화
