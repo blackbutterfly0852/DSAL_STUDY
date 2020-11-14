@@ -2,22 +2,42 @@ import java.util.*;
 
 public class BOJ2231_DividedSum {
     // 1. 시간복잡도 확인(== 경우의 수 확인)
-    // 1) 1,000,000 * 990,000 = 990,000,000,000 == 9천억? -> 실패 가능성 有
+    // 1) 1,000,000 * 990,000 = 990,000,000,000 == 9천억? -> 실패 가능성 有 -> 이 문제를 범위를 어떻게 줄이느냐가 핵심.
 
-    // 2. 첫번째 접근 방법 : 실패 -> 2번 조건 포함
+    // 2. 첫번째 접근 방법 
     // 1) M은 N보다 작다
-    // 2) M과 N은 최대 1자리까지만 차이 난다.
+    // 2) M과 N은 최대 1자리까지만 차이 난다. -> M의 최소값을 N의 자릿수 -1 로 생각했다.
     // 3) M이 커질 수록 N이 계속 커지는 것은 아니다.
+    public static int solution_1(int N) {
 
-    // 3. 두번째 접근 방법 : 성공 -> 2번 조건 제외
+        String nToString = Integer.toString(N);
+        int min = (int) Math.pow(10, nToString.length() - 2);
+        // System.out.println("min : " + min);
+        int ret = 987654321;
+        for (int i = min; i < N; i++) {
+            int cRet = i;
+            String[] startToString = Integer.toString(i).split("");
+            for (String s : startToString) {
+                cRet += Integer.parseInt(s);
+
+            }
+            if (cRet == N) {
+                ret = Math.min(ret, i);
+                break;
+            }
+
+        }
+
+        return ret == 987654321 ? 0 : ret;
+
+    }
+
+    // 3. 두번째 접근 방법 
     // 1) M은 N보다 작다
     // 2) M이 커질 수록 N이 계속 커지는 것은 아니다.
-    // 3) 즉, 전체조회
-
-    // 4. 회고
-    // 1) 시간 및 공간 제약이 정답안에 가까스로 포함된다.
-    // 2) 시간 및 공간 복잡도를 낮춰야 한다.
-    public static int solution(int N) {
+    // 3) 전체조회
+   
+    public static int solution_2(int N) {
 
         int ret = 987654321;
         for (int i = 1; i < N; i++) {
@@ -37,9 +57,11 @@ public class BOJ2231_DividedSum {
         return ret == 987654321 ? 0 : ret;
 
     }
-
-    public static int solution_2(int N) {
-        // 1. 개선할 점
+    // 4. 회고
+    // 1) 시간 및 공간 제약이 정답안에 가까스로 포함된다.
+    // 2) 시간 및 공간 복잡도를 낮춰야 한다.
+    public static int solution_3(int N) {
+        // 5. 개선할 점
         // 1) 탐색 범위를 줄이자
         // 2) M + K = N에서 3개의 문자는 모두 양수 -> M이 커지면 K가 작아지고 M이 작아지면 K가 커진다.
         // 3) K는 자리 수의 숫자를 더한 것 -> 각 자리수는 0~9까지 존재. 그럼 K의 값은 M의 자리수를 기준으로 할지 N의 자리수를
@@ -78,7 +100,7 @@ public class BOJ2231_DividedSum {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println(solution_2(sc.nextInt()));
+        System.out.println(solution_1(sc.nextInt()));
 
     }
 }
