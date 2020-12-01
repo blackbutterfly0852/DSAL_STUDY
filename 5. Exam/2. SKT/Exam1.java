@@ -6,9 +6,6 @@ public class Exam1 {
     static int[] summer;
     static int[] autumn;
 
-    
-
-
 
     public static String solution(int[] T) {
         // 1. 초기화

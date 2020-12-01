@@ -17,6 +17,7 @@ public class QuickSort_Concept {
     
     // 1. left_idx가 right_idx 보다 크다? -> pivot을 기준으로 왼쪽은 작은 수, 오른쪽은 큰 수로 정렬되었다는 의미.
     while(left_idx <= right_idx){
+        System.out.println("A : " + left_idx + " " + right_idx);
         // 1-1. left_idx의 값이 pivot 값보다 클 때까지 반복
         while(list[left_idx]<pivot){
             left_idx++;
@@ -25,15 +26,17 @@ public class QuickSort_Concept {
         while(list[right_idx]>pivot){
             right_idx--;
         }
+        System.out.println("B : " + left_idx + " " + right_idx);
         // 1-3.
-        // 현 left_idx : pivot보다 큰 값이 위치한 곳
-        // 현 right_idx : pivot보다 작은 값이 위치한 곳
+        // 현 left_idx : pivot보다 크거나 같은 값이 위치한 곳
+        // 현 right_idx : pivot보다 작거나 작은 값이 위치한 곳
         // swap
         if(left_idx <= right_idx){
             int tmp_left = list[left_idx];
             list[left_idx++] = list[right_idx];
             list[right_idx--] = tmp_left;
         }
+        System.out.println("C : " + left_idx + " " + right_idx);
 
     }
     // 2. 추출 
@@ -70,19 +73,20 @@ public class QuickSort_Concept {
 
     }
     public static void main(String[] args) {
-        int[] test =  {5,7,1,4,6,2,3,9,8};
-        int[] test_2 ={1,8,7,4,5,2,6,3,0};
-        System.out.println("5,7,1,4,6,2,3,9,8");
+        int[] test =  {5,4,7,10,2};
+        //int[] test =  {5,7,1,4,6,2,3,9,8};
+        //int[] test_2 ={1,8,7,4,5,2,6,3,0};
+        //System.out.println("5,7,1,4,6,2,3,9,8");
         quickSort(test,0,test.length-1);
-        System.out.println("1,8,7,4,5,2,6,3,0");
-        quickSort(test_2,0,test_2.length-1);
+        //System.out.println("1,8,7,4,5,2,6,3,0");
+        //quickSort(test_2,0,test_2.length-1);
         for(int a : test){
             System.out.print(a + " ");
         }
         System.out.println("");
-        for(int a : test_2){
-            System.out.print(a + " ");
-        }
+        //for(int a : test_2){
+            //System.out.print(a + " ");
+        //}
    
     }
     
