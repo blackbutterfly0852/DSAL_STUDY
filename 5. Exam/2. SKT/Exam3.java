@@ -1,6 +1,5 @@
 public class Exam3 {
     public static String solution(int A, int B) {
-        
         if (A >= B) {
             return findString(A, B, "a", "b" );
         } else {
