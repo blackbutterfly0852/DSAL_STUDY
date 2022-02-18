@@ -10,7 +10,7 @@ public class BigNumber {
         String[] temp = new String[numbers.length];
 
         for (int i = 0; i < numbers.length; i++) {
-            temp[i] = Integer.toString(numbers[i]);
+            temp[i] = Integer.toString(numbers[i]); 
         }
         
         // 2. 글자를 합쳐 숫자로 변환 후 큰 쪽이 앞으로 오게 기준
