@@ -9,47 +9,41 @@ public class BaseStationInstallation {
 			init[stations[i] - 1] = true;
 		}
 
-		// 초기 기지국 앞, 뒤로 세팅
+		int cnt = 0;
 		for (int i = 0; i < init.length; i++) {
-			
-			if (init[i]) {
-                // 기지국 앞 세팅
-				for (int j = 1; j <= w; j++) {
-					if (i + j < n) {
-						init[i + j] = true;
-					}
-				}
-                // 기지국 뒤 세팅
-				for (int j = w; j >= 1; j--) {
-					if (i - j >= 0) {
-						init[i - j] = true;
-					}
-				}
-
-				i = i + w + 1;
+			if(!init[i]){
+				System.out.println("1_init[i] : " + init[i]);
+				cnt++;
+				System.out.println("1_cnt : " + cnt);
 			}
+			if(cnt == (2*w+1)){
+				answer++;
+				cnt = 0;
+				System.out.println("2_answer : " + answer);
+				System.out.println("2_cnt : " + cnt);
+			}else if(init[i] && cnt>w ){
+				answer++;
+				cnt = 0;
+				i = i+w;
+				System.out.println("3_answer : " + answer);
+				System.out.println("3_i : " + i);
 
-		}
-        
-        // 남은 기지국으로 계산
-		for (int i = 0; i < init.length; i++) {
-			if (!init[i]) {
-				if (i + w < n) {
-
-					answer++;
-					i = i + w + 1;
-				}
+			}else if(init[i] && cnt<w && cnt>0){
+				answer++;
+				cnt = 0;
+				i = i+w;
+				System.out.println("4_answer : " + answer);
+				System.out.println("4_i : " + i);
 
 			}
-
 		}
 
 		return answer;
 	}
 	    public static void main(String[] args) {
-	    	int n = 16;
-	    	int[] stations = {9};
-	    	int w = 2;
+	    	int n = 11;
+	    	int[] stations = {4,11};
+	    	int w = 1;
 			System.out.println(solution(n,stations,w));
 	    	
 

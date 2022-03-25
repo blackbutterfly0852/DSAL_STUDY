@@ -1,3 +1,5 @@
+package DSAL_STUDY;
+
 import java.math.BigDecimal;
 import java.security.SecureRandom;
 import java.util.Arrays;
